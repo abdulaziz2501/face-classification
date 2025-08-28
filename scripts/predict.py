@@ -1,8 +1,8 @@
 import yaml, torch
 from PIL import Image
 from torchvision import transforms
-from facecls.model_zoo import build_model
-from facecls.utils import device
+from src.facecls.model_zoo import build_model
+from src.facecls.utils import device
 
 if __name__ == "__main__":
     cfg = yaml.safe_load(open("configs/default.yaml"))

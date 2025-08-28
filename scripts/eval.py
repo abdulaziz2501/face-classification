@@ -1,8 +1,8 @@
 import yaml, torch, torch.nn as nn
-from facecls.data import build_dataloaders
-from facecls.model_zoo import build_model
-from facecls.engine import evaluate
-from facecls.utils import device
+from src.facecls.data import build_dataloaders
+from src.facecls.model_zoo import build_model
+from src.facecls.engine import evaluate
+from src.facecls.utils import device
 
 if __name__ == "__main__":
     cfg = yaml.safe_load(open("configs/default.yaml"))

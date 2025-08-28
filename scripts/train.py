@@ -2,10 +2,10 @@ import yaml, torch, torch.nn as nn
 from torch.optim import AdamW
 from torch.optim.lr_scheduler import ReduceLROnPlateau
 from torch.cuda.amp import GradScaler
-from facecls.utils import set_seed, device
-from facecls.data import build_dataloaders
-from facecls.model_zoo import build_model
-from facecls.engine import train_one_epoch, evaluate
+from src.facecls.utils import set_seed, device
+from src.facecls.data import build_dataloaders
+from src.facecls.model_zoo import build_model
+from src.facecls.engine import train_one_epoch, evaluate
 
 if __name__ == "__main__":
     cfg = yaml.safe_load(open("configs/default.yaml"))
