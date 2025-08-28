@@ -1,0 +1,33 @@
+face-classification/
+├── README.md
+├── LICENSE
+├── requirements.txt
+├── .gitignore
+├── pyproject.toml                # (ixtiyoriy, packaging/pip install -e . uchun)
+├── configs/
+│   └── default.yaml             # bitta joydan hyperparam va yo'llarni boshqarish
+├── data/
+│   ├── raw/                     # asl zip fayllar (masalan: face classification.v2i.multiclass.zip)
+│   ├── interim/                 # unzip qilingan, hali split bo'lmagan
+│   └── processed/               # train/val/test strukturasi tayyor
+├── notebooks/
+│   └── 01_eda.ipynb             # EDA va tez prototiplar
+├── src/
+│   └── facecls/                 # package (pip install -e . bilan import qilinadi)
+│       ├── __init__.py
+│       ├── data.py              # dataset loader, auto-split, ImageFolder
+│       ├── augmentations.py     # train/eval transformlar
+│       ├── model_zoo.py         # ResNet18/50, EfficientNet..., head moslash
+│       ├── engine.py            # train/eval loop, metriclar, checkpoint saqlash
+│       ├── utils.py             # seed, logging, timers, confusion matrix helpers
+│       ├── inference.py         # bitta rasm/papka bo'yicha predict
+│       └── export.py            # ONNX/torchscript eksport
+├── scripts/
+│   ├── prepare_data.py          # zip -> unzip -> split -> data/processed/
+│   ├── train.py                 # config bilan o'qitish
+│   ├── eval.py                  # test yoki val da baholash
+│   └── predict.py               # inference CLI
+├── experiments/
+│   └── runs/                    # tensorboard log, best.ckpt, config snapshot
+└── tests/
+    └── test_smoke.py            # tez smoke-test (importlar, shapes, 1 batch)
