@@ -39,8 +39,8 @@ def make_splits_if_needed(dataset_root: Path, processed_dir: Path, splits):
 
 def build_dataloaders(cfg):
     zip_path = Path(cfg["paths"]["zip_path"])
-    interim_dir = Path(cfg["paths"]["interim_dir"])
-    processed_dir = Path(cfg["paths"]["processed_dir"])
+    interim_dir = Path(cfg["paths"]["interim"])
+    processed_dir = Path(cfg["paths"]["processed"])
     img_size = cfg["data"]["img_size"]
     bs = cfg["data"]["batch_size"]; nw = cfg["data"]["num_workers"]
     splits = cfg["data"]["splits"]

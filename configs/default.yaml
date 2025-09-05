@@ -3,11 +3,11 @@ seed: 42
 
 paths:
   zip_path: "data/raw/face classification.v2i.multiclass.zip"
-  work_dir: "experiments/runs"
-  interim_dir: "data/interim"
-  processed_dir: "data/processed"
+  interim: "data/interim"      # <= qo'shildi (kod kutyapti)
+  processed: "data/processed"  # <= qo'shildi (kod kutyapti)
   best_ckpt: "experiments/runs/best_resnet18.pt"
   onnx_path: "experiments/runs/best_resnet18.onnx"
+
 
 data:
   img_size: 224
